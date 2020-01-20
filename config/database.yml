@@ -1,0 +1,11 @@
+development:
+  url: <%= ENV['DATABASE_URL'] || 'postgres://chatpack:password@postgres:5432/chatpack_db_development' %>
+  database: chatpack_db_development
+  username: chatpack
+  password: password
+  pool: 50
+  schema_search_path: "public,shared_extensions"
+# test:
+#   adapter: sqlite3
+#   pool: 5
+#   timeout: 50000

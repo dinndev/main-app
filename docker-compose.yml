@@ -1,0 +1,50 @@
+version: "3"
+services:
+  chatpack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chatpack
+    image: chatpack
+    volumes:
+      - ".:/app"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 1m
+    ports:
+      - "3000:3000"
+    environment:
+      REDIS_URL: redis://redis:6379
+      DATABASE_URL: postgres://chatpack:password@postgres:5432/chatpack_db_development
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    container_name: cp_postgres
+    image: postgres:9.4-alpine
+    environment:
+      PGDATA: /pgdata
+      POSTGRES_USER: chatpack
+      POSTGRES_PASSWORD: password
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 1m
+    volumes:
+      - ./postgres:/pgdata
+      - ./tmp:/tmp
+    ports:
+      - 5432:5432
+
+  redis:
+    container_name: cp_redis
+    image: redis:5.0-alpine
+    command: redis-server --appendonly yes
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 1m
+    ports:
+      - 6379:6379
