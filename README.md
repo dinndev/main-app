@@ -6,7 +6,7 @@
   * Full-page chat app
   * Chat app UI for client
   * Customizable UI for end-users
-  * Connect Dialogflow Agent
+  * Bot Feature ( Dialogflow Integration )
   * Automated Workflow
   * App Integration
     - Facebook
