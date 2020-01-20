@@ -12,7 +12,6 @@
     - Facebook
     - Slack
     - Gmail
-    - Trello
 
 ### System dependencies 👇
 * Ruby ➜ 2.6.5
