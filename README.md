@@ -1,7 +1,7 @@
 # Chatpack
   Chatpack is a customizable chat application that everyone can use without coding.
 
-### Roadmap
+### Roadmap 🛣️
   * Pop-up chat app (embeddable)
   * Full-page chat app
   * Chat app UI for client
@@ -14,7 +14,7 @@
     - Gmail
     - Trello
 
-### System dependencies
+### System dependencies 👇
 * Ruby ➜ 2.6.5
 * Rails ➜ 6.0.1
 * Docker
@@ -22,7 +22,7 @@
 * npm or yarn or both 😜
 
 
-### Configuration
+### Configuration ⚙️
 
 Build chatpack image
 ```
